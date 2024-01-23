@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulserande Box</title>
+  <style>
+        body {
+      background-color: #ff99cc; /* Rosa bakgrund */
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Knappen till vänster */
+    }
+
+    #blueSquare {
+      width: 100px;
+      height: 100px;
+      box-shadow: 1px 1px 7px black;
+      background-color: #66b3ff; /* Blå kvadrat */
+      margin: auto; /* Håller kvadraten i mitten */
+      display: flex;
+    }
+
+    #clickButton {
+      background-color: #cc99ff; /* Lila knapp */
+      padding: 40px 65px; /* Ökad storlek för knappen */
+      margin: 40px;
+      border: 1px solid #000000;
+      box-shadow: 1px 1px 7px black;
+      color: black;
+      text-shadow: 1px 1px 7px white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      to {
+        transform: scale(1.1); /* Pulseringseffekt */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <button id="clickButton" onclick="pulseSquare()">Klicka Här</button>
+    <div id="blueSquare"></div>
+  </div>
+
+  <script>
+    function pulseSquare() {
+      var square = document.getElementById("blueSquare");
+      square.style.animation = 'pulse 1s infinite alternate'; /* Aktivera pulseringseffekt */
+    }
+  </script>
+
+</body>
+</html>
